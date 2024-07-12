@@ -1,0 +1,752 @@
+@import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Gugi&display=swap');
+
+#진접고등학교 {
+  position: absolute;
+  top:0%;
+  left:28%;
+    font-family: Black Han Sans;
+    font-size: 40px;
+    font-weight: 20;
+    margin-top: 20.3%; 
+    letter-spacing: normal;
+    text-align: center;
+    color: #2e4dd4;
+  }
+  .배경 {
+    position: absolute;
+    top: 0%;
+    width: 315px;
+    height: 167px;
+    border: solid 1px #707070;
+    background-color: #ffffff;
+  }
+  #위치전체배경 {
+    position: absolute;
+    top: 0%;
+    left: 315px;
+    width: 1603px;
+    height: 1080px;
+    background-color: #f5f6fa;
+  }
+  .왼쪽파랭이  {
+    position: absolute;
+    top: 0%;
+    width: 317px;
+    height: 913px;
+    margin: 167px 0 0;
+    background-color: #2e4dd4;
+  }
+  #로고{
+      width: 59.7px;
+      height: 59.7px;
+      margin: 0 9.3px 0 0;
+      position:relative;
+    top: 33%;
+    left: 7%;
+  }
+  #로고 > img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  #전체배경제목{
+    position: absolute;
+    top: 5.5%;
+    left: 3%;
+    width: 500px;
+    height: 42px;
+    margin: 0 20px 52px 11px;
+    font-family: Black Han Sans;
+    font-size: 50px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #2e4765;
+  }
+  #Wellcome{
+    position: absolute;
+    top: 5.2%;
+    left: 31.9%;
+    width: 99px;
+    height: 28px;
+    margin: 14px 129px 52px 20px;
+    font-family: Poppins;
+    font-size: 28px;
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #2e4765;
+  }
+  #개발자정보 {
+    position:absolute;
+    opacity:0.4;
+    left: 25%;
+    top: 2%;
+    width: 200px;
+    height: 80px;
+    margin: 40.3px 0 29.7px 13px;
+    font-family: Poppins;
+    font-size: 24px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #fff;
+    background-color: transparent;
+  border: none;
+  }
+  #수업위치 {
+    position:absolute;
+    left: 25%;
+    top:16.5%;
+    width: 200px;
+    height: 80px;
+    margin: 0 36px 40.3px 13px;
+    font-family: Poppins;
+    font-size: 22px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #fff;
+    background-color: transparent;
+  border: none;
+  }
+  #상자 {
+    top: 19%;
+    width: 35px;
+    height: 35px;
+    position:relative;
+    left:17%;
+  }
+  #상자 > img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  #집 {
+    top: 5%;
+    left:17%;
+    width: 35px;
+    height: 35px;
+    position:relative;
+  }
+  #집 > img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .연초록박스 {
+    position:absolute;
+    top:23.2%;
+    left:3.2%;
+    width: 300px;
+    height: 59px;
+    margin: 23px 0 6px;
+    padding: 0 1107px 1.7px 92px;
+    border-radius: 27px;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+    background-color: #ddeeef;
+  }
+  .줄 {
+    position:absolute;
+    top:25.6%;
+    left:15.8%;
+    width: 2px;
+    height: 57.3px;
+    margin: 0 107.4px 0 107.6px;
+    background-color: #d3d6e5;
+  }
+  #목록 {
+    position:absolute;
+    top:25.2%;
+    left:11%;
+    width: 50px;
+    height: 27px;
+    margin: 17px 107.6px 13.3px 0;
+    font-family: Poppins;
+    font-size: 24px;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #2e4765;
+  }
+  #정보 {
+    position:absolute;
+    top:25.2%;
+    left:33%;
+    width: 50px;
+    height: 27px;
+    margin: 17px 107.6px 13.3px 0;
+    font-family: Poppins;
+    font-size: 24px;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #2e4765;
+  }
+.검색창1{
+  position: absolute;
+  top: 15.2%;
+  left: 3.8%;
+  width: 290.6px;
+  height: 72px;
+  padding: 8px 20px;
+  border-radius: 20px;
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+  background-color: #fff;
+}
+
+.검색창2{
+  position: absolute;
+  top: 15.2%;
+  left: 26.7%;
+  width: 290.6px;
+  height: 72px;
+  padding: 8px 20px;
+  border-radius: 20px;
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+  background-color: #fff;
+}
+.전체배경속배경 {
+  position: absolute;
+  left:3%;
+  top:31%;
+  width: 1442px;
+  height: 655px;
+  margin: 6px 0 3.3px;
+  padding: 24px 32px 25px 23.5px;
+  border-radius: 27px;
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+  background-color: #fff;
+}
+.전체배경속배경속줄 {
+  position: absolute;
+  left:7.6%;
+  top:31%;
+  width: 2px;
+  height: 708.3px;
+  margin: 6px 67px 0 239.6px;
+  background-color: #d3d6e5;
+}
+.전체배경속배경속배경{
+  position: absolute;
+  left:21%;
+  top:43%;
+  width: 1120px;
+  height: 563px;
+  margin: 11px 0 0 59.4px;
+  opacity: 0.31;
+  border-radius: 27px;
+  background-color: #ddeeef;
+}
+#벝은1{
+  position: absolute;
+  opacity: 0.4;
+  top: 33.2%;
+  left: 22%;
+  width: 250px;
+  height: 60px;
+  margin: 5px 33.7px 12px 59.6px;
+  padding: 19px 15.6px 21px 16.7px;
+  border-radius: 12px;
+  border: solid 1px #00bf78;
+  background-color: #30e1a0;
+}
+.버튼2{
+  position: absolute;
+  opacity: 0.4;
+  top: 33.2%;
+  left: 43.9%;
+  width: 250px;
+  height: 60px;
+  margin: 5px 33.7px 12px 59.6px;
+  padding: 19px 15.6px 21px 16.7px;
+  border-radius: 12px;
+  border: solid 1px #00bf78;
+  background-color: #30e1a0;
+}
+#텍스트1{
+  position: absolute;
+  top: 27%;
+  left: -3.2%;
+  width: 300px;
+  height: 36px;
+  font-family: Poppins;
+  font-size: 25px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  text-align: center;
+  color: #fff;
+  background-color: transparent;
+  border: none;
+}
+#텍스트2{
+  position: absolute;
+  top: 27%;
+  left: -3.2%;
+  width: 300px;
+  height: 36px;
+  font-family: Poppins;
+  font-size: 25px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  text-align: center;
+  color: #fff;
+  background-color: transparent;
+  border: none;
+}
+.학년{
+  position: absolute;
+  top: -8%;
+  left: 4.5%;
+  width: 32px;
+  height: 21px;
+  font-family: Poppins;
+  font-size: 16px;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #2e4765;
+}
+.과목{
+  position: absolute;
+  top: -8%;
+  left: 4.5%;
+  width: 32px;
+  height: 21px;
+  font-family: Poppins;
+  font-size: 16px;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #2e4765;
+}
+#화살표1 {
+  top: 18%;
+  left:21%;
+  width: 33.6px;
+  height: 33.5px;
+  background-color: #ffffff;
+  position:relative;
+}
+#화살표1 > img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#화살표2 {
+  top: 18%;
+  left:41.5%;
+  width: 33.6px;
+  height: 33.5px;
+  background-color: #ffffff;
+  position:relative;
+}
+#화살표2 > img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#학년선택{
+  position: absolute;
+  top: 21.5%;
+  left: 4.5%;
+  width: 300px;
+  height: 70px;
+  font-family: Poppins;
+  font-size: 16px;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #2e4765;
+}
+#학년출력{
+  position: absolute;
+  top: 33.7%;
+  left:4.5%;
+  width: 260px;
+  height: 20px;
+  font-size: 22px;
+  color: #000000;
+}
+#과목선택{
+  position: absolute;
+  top: 21.5%;
+  left: 27.2%;
+  width: 300px;
+  height: 130px;
+  font-family: Poppins;
+  font-size: 16px;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #2e4765;
+}
+#과목출력{
+  position: absolute;
+  top: 33.7%;
+  left:4.5%;
+  width: 280px;
+  height: 20px;
+  font-size: 22px;
+  color: #000000;
+}
+#선생님목록 {
+  position: absolute;
+  top:32.7%;
+  left:3.3%;
+  width:300px;
+  height: 670px;
+  display: flex;
+  overflow: auto;
+  flex-direction: column;
+  
+}
+.button {
+  width: 240px;
+  height: 100px;
+  font-size: 17px;
+  padding: 20px;
+  border: none;
+  margin: 20px;
+  color: #000000;
+}
+.button.clicked {
+  background-color: #30e1a0;
+  width: 240px;
+  height: 100px;
+  font-size: 17px;
+  margin: 20px;
+  padding: 20px;
+  border: none;
+  color: #000000;
+}
+#교무실위치{
+  top:42%;
+  left:26%;
+  width: 700px;
+  height: 540px;
+  position:relative;
+}
+#교무실위치 > #교무실위치이미지 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#교무실위치설명{
+  top:-8%;
+  left:70%;
+  width: 400px;
+  height: 540px;
+  position:relative;
+}
+#교무실위치설명 > #교무실위치설명이미지 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#시간표{
+  top:42%;
+  left:26%;
+  width: 800px;
+  height: 500px;
+  position:relative;
+}
+#시간표 > #시간표이미지 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.개발자정보1  {
+  width: 400px;
+  height: 850px;
+  position: absolute;
+  left: 4%;
+  top: 19%;
+  border-radius: 27px;
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+  background-color: #ddeeef;
+}
+.개발자정보2  {
+  width: 400px;
+  height: 850px;
+  position: absolute;
+  left: 34%;
+  top: 19%;
+  border-radius: 27px;
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+  background-color: #ddeeef;
+}
+.개발자정보3 {
+  width: 400px;
+  height: 850px;
+  position: absolute;
+  left: 64%;
+  top: 19%;
+  border-radius: 27px;
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+  background-color: #ddeeef;
+}
+#line {
+  position: absolute;
+  left: 5%;
+  top: 27%;
+  width: 371.1px;
+  height: 2px;
+
+  background-color: #d3d6e5;
+}
+#line2 {
+  position: absolute;
+  left: 35%;
+  top: 27%;
+  width: 371.1px;
+  height: 2px;
+
+  background-color: #d3d6e5;
+}
+#line3 {
+  position: absolute;
+  left: 65%;
+  top: 27%;
+  width: 371.1px;
+  height: 2px;
+
+  background-color: #d3d6e5;
+}
+#하얀무언가 {
+    width: 1495px;
+    height: 1032px;
+    margin: 6px 0 6px;
+    padding: 24px 32px 25px 23.5px;
+    border-radius: 27px;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+    background-color: #fff;
+}
+
+#정보전체배경 {
+  position: absolute;
+  margin-top: 0%;
+  margin-left: 16.5%;
+  width: 1603px;
+  height: 1080px;
+  background-color: #f5f6fa;
+}
+#개발자정보제목1 {
+  position: absolute;
+  left: 10px;
+  color: #000000;
+  font-family: Black Han Sans;
+  font-size: 38px;
+}
+#개발자정보제목2 {
+  position: absolute;
+  left: 10px;
+  color: #000000;
+  font-family: Black Han Sans;
+  font-size: 40px;
+}
+#개발자정보제목3 {
+  position: absolute;
+  left: 10px;
+  color: #000000;
+  font-family: Black Han Sans;
+  font-size: 40px;
+}
+#개발자정보본문1 {
+  position: absolute;
+  top: 10%;
+  left: 10px;
+  color: #000000;
+  font-family: Black Han Sans;
+  font-size: 35px;
+}
+#개발자정보본문2 {
+  position: absolute;
+  left: 10px;
+  top: 10%;
+  color: #000000;
+  font-family: Black Han Sans;
+  font-size: 45px;
+}
+#개발자정보본문3 {
+  position: absolute;
+  left: 10px;
+  top: 26%;
+  color: #000000;
+  font-family: Black Han Sans;
+  font-size: 35px;
+}
+#개발자정보본문4 {
+  position: absolute;
+  left: 10px;
+  top: 10%;
+  color: #000000;
+  font-family: Black Han Sans;
+  font-size: 32px;
+}
+#개발자정보본문5 {
+  position: absolute;
+  left: 10px;
+  top: 32%;
+  color: #000000;
+  font-family: Black Han Sans;
+  font-size: 35px;
+}
+#HTML5로고{
+  position: absolute;
+  top:55%;
+  left:5%;
+  width: 150px;
+  height: 150px;
+}
+
+#HTML5로고 > img{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#CSS로고{
+  position: absolute;
+  top:55%;
+  left: 50%;
+  width: 150px;
+  height: 150px;
+}
+
+#CSS로고 > img{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#자바로고{
+  position: absolute;
+  top:55%;
+  width: 150px;
+  height: 150px;
+  left: 33%;
+}
+
+#자바로고 > img{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#디자인로고{
+  position: absolute;
+  top:55%;
+  width: 150px;
+  height: 150px;
+  left: 33%;
+}
+
+#디자인로고 > img{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#사용방법 {
+  position:absolute;
+  opacity:0.4;
+  left: 25%;
+  top: 21.5%;
+  width: 200px;
+  height: 80px;
+  margin: 40.3px 0 29.7px 13px;
+  font-family: Poppins;
+  font-size: 24px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #fff;
+  background-color: transparent;
+border: none;
+}
+#물음표 {
+  top: 20.5%;
+  width: 35px;
+  height: 35px;
+  position:relative;
+  left:17.5%;
+  filter: invert(100%);
+}
+#물음표 > img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

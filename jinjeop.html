@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <link rel="stylesheet" href="jinjeop.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #학년선택 {
+            display: none;
+        }
+        .도움말정보전체배경 {
+            display: none;
+        }
+        #과목선택 {
+            display: none;
+        }
+        .개발자정보전체배경 {
+            display: none;
+        }
+        #시간표 {
+            display: none;
+        }
+        #교무실위치 {
+            display: none;
+        }
+        #교무실위치설명 {
+            display: none;
+        }
+    </style>
+    <script> 
+        let clickedButtonIndex;
+        var grade=0;
+        var subject=0;
+        var p_or_t=0;
+        var info=[['김현정', '1학년국어', '1', '0'], ['윤보아', '언어와매체', '3', '0'], ['최한나', '1학년국어', '1', '1-7'], ['송소라', '언어와매체', '3', '0'], ['남궁찬', '1학년국어', '1', '1-12'], ['정혜련', '언어와매체,교육학', '3', '3-10'], ['이서라', '문학', '2', '2-3'], ['윤지영', '심화국어,창체진로,언어와매체', '2,3', '0'], ['김혜광', '문학', '2', '2-6'], ['김미진', '고전읽기', '3', '3-6'], ['김정민', '문학', '2', '2-10'], ['구혜영', '1학년수학', '1', '1-1'], ['민경미', '1학년수학', '1', '0'], ['박은선', '확률과통계', '3', '0'], ['장준', '1학년수학', '1', '0'], ['남연우', '확률과통계', '3', '3-8'], ['심은지', '2학년수학', '2', '2-4'], ['조동기', '확률과통계,미적분', '3', '0'], ['김화경', '2학년수학', '2', '0'], ['김소희', '1학년영어', '1', '1-2'], ['장민정', '2학년수학', '2', '2-9'], ['김진희', '1학년영어', '1', '0'], ['이동엽', '기하', '2', '2-11'], ['이주영', '1학년영어', '1', '0'], ['이슬', '2학년영어', '2', '2-2'], ['이태관', '영미문화읽기,영어권문화', '2,3', '0'], ['임호준', '2학년영어', '2', '0'], ['송민휘', '한국사,3학년창체진로', '1,3', '1-5'], ['김유미', '2학년영어', '2', '0'], ['손미연', '한국사,2학년창체진로', '1,2', '0'], ['최미숙', '3학년영어', '3', '3-7'], ['안대진', '한국사,세계사', '1,2', '0'], ['진혜진', '3학년영어', '3', '3-11'], ['박정해', '동아시아사,3학년창체진로', '3', '3-2'], ['채준병', '3학년영어', '3', '3-4'], ['염경환', '통합사회,세계지리,여행지리', '1,2,3', '3-5'], ['박지실', '통합사회,2학년창체진로,한국지리', '1,2,3', '0'], ['김태연', '경제,2학년창체진로,사회문화', '2,3', '2-8'], ['김동일', '통합사회,실용경제', '1,3', '0'], ['박지윤', '통합사회,사회문화', '1,3', '1-4'], ['이재환', '생활과윤리,윤리와사상', '2,3', '0'], ['이계영', '통합과학,과학탐구실험', '1', '0'], ['김흥태', '생활과윤리,2학년창체진로,윤리와사상', '2,3', '0'], ['김호정', '통합과학,과학탐구실험', '1', '1-11'], ['박은숙', '통합사회,윤리와사상', '1', '3-12'], ['황현주', '통합과학,과학탐구실험,2학년창체진로,생명과학1', '1,2', '2-5'], ['고태연', '정치와법,사회문화', '2,3', '0'], ['김정인', '생명과학2', '3', '3-9'], ['주가은', '생명과학1,2학년창체진로,환경', '2,3', '2-7'], ['김은량', '생활과과학,환경', '3', '0'], ['최경희', '화학1,생활과과학', '2,3', '2-12'], ['박상우', '1학년체육', '1', '0'], ['김문현', '화학1,화학2', '2,3', '0'], ['김재홍', '1학년체육,2학년체육', '1,2', '0'], ['김성근', '물리1,물리2', '2,3', '3-1'], ['이명재', '2학년체육', '2', '0'], ['계승희', '통합과학,과학탐구실험,지구과학1', '1,2', '1-6'], ['김진우', '2학년창체진로,3학년체육', '2,3', '0'], ['황미선', '2학년창체진로,지구과학1,지구과학2', '2,3', '0'], ['정유진', '1학년음악,팀프로젝트', '1,2', '1-3'], ['김혜자', '팀프로젝트,2학년음악,3학년음악', '2,3', '0'], ['유다미', '정보,인공지능기초,인공지능과미래사회', '1,2,3', '1-8'], ['하진건', '1학년미술,팀프로젝트,2학년미술', '1,2', '1-10'], ['윤미링', '일본어,일본문화,3학년창체진로', '2,3', '3-3'], ['최혜인', '1학년미술,팀프로젝트,3학년미술', '1,2,3', '1-9'], ['최은주', '중국어,중국문화,3학년창체진로', '2,3', '2-1'], ['황선식', '기술,공학일반,생활속융합적사고', '1,3', '0'], ['전영미', '생활과한문,3학년창체진로,민주', '3', '0'], ['한호운', '가정,패션디자인', '1,3', '0'], ['신영미', '보건', '3', '0'], ['윤진', '정보,프로그래밍,빅데이터', '1,2', '0'], ['이근숙', '창체진로', '1', '0'], ['홍미경', '스페인어', '2', '0'], ['정철호', '연극', '3', '0']];
+        var grade_subject_info=[['1', '1학년국어'], ['1', '1학년수학'], ['1', '1학년영어'], ['1', '한국사'], ['1', '통합사회'], ['1', '통합과학'], ['1', '과학탐구실험'], ['1', '1학년체육'], ['1', '1학년음악'], ['1', '1학년미술'], ['1', '기술'], ['1', '가정'], ['1', '창체진로'], ['2', '2학년수학'], ['2', '문학'], ['2', '심화국어'], ['2', '2학년창체진로'], ['2', '2학년영어'], ['2', '영미문화읽기'], ['2', '세계사'], ['2', '세계지리'], ['2', '경제'], ['2', '생활과윤리'], ['2', '생명과학1'], ['2', '지구과학1'], ['2', '물리1'], ['2', '화학1'], ['2', '정치와법'], ['2', '2학년체육'], ['2', '팀프로젝트'], ['2', '2학년음악'], ['2', '인공지능기초'], ['2', '2학년미술'], ['2', '일본어'], ['2', '중국어'], ['2', '스페인어'], ['2', '프로그래밍'], ['2', '빅데이터'], ['3', '언어와매체'], ['3', '미적분'], ['3', '확률과통계'], ['3', '동아시아사'], ['3', '사회문화'], ['3', '3학년영어'], ['3', '물리2'], ['3', '화학2'], ['3', '지구과학2'], ['3', '생명과학2'], ['3', '3학년창체진로'], ['3', '교육학'], ['3', '고전읽기'], ['3', '여행지리'], ['3', '한국지리'], ['3', '윤리와사상'], ['3', '환경'], ['3', '3학년체육'], ['3', '3학년음악'], ['3', '3학년미술'], ['3', '인공지능과미래사회'], ['3', '공학일반'], ['3', '일본문화'], ['3', '중국문화'], ['3', '생활과한문'], ['3', '민주'], ['3', '패션디자인'], ['3', '보건'], ['3', '연극'], ['1', '정보']];
+        var assigned_teacher=[];
+        var actual_teacher=[];
+        var print_arr=[];
+        var grade_select_check=false;
+        for(let i=0; i<74; i++)
+            assigned_teacher.push(info[i][0]);
+    </script>
+    
+</head>
+<body>
+    <div class = "완성">
+        <div class="전체배경" id="위치전체배경">
+            <h2 id="전체배경제목"> 선생님 교무실 위치 찾기 </h2>
+            <h4 id="Wellcome"> Welcome </h4>
+            <div class="연초록박스"> </div>
+            <div class="줄"> </div>
+            <h1 id="목록"> 목록 </h1>
+            <h1 id="정보"> 정보 </h1>
+            <div class="검색창1">
+                <h4 class="학년">학년</h4>
+                <div id='학년출력'> </div>
+            </div>
+            <div class="검색창2">
+                <h4 class="과목">과목</h4>
+                <div id='과목출력'> </div>
+            </div>
+            <button id="화살표1">
+                <img src="화살표.png" alt="화살표1">
+            </button> 
+            <button id="화살표2">
+                <img src="화살표.png" alt="화살표2">
+            </button> 
+            <div class="전체배경속배경"> </div>
+            <div class="전체배경속배경속줄"> </div>
+            <div class="전체배경속배경속배경 "> </div>
+            <select id="학년선택" onchange="handleOnChange(this)" size="3">
+                <option value="1학년">1학년</option>
+                <option value="2학년">2학년</option>
+                <option value="3학년">3학년</option>
+            </select>
+            <script>
+                function handleOnChange(e) {  
+                    const values = [...e.options]
+                    .filter(option => option.selected)
+                    .map(option => option.value);
+                    const texts = [...e.options]
+                    .filter(option => option.selected)
+                    .map(option => option.text);
+                    document.getElementById('학년출력').innerText = values;
+                    if(values=="1학년")
+                        grade=1;
+                    if(values=="2학년")
+                        grade=2;
+                    if(values=="3학년")
+                        grade=3;
+
+                    var option_grade = document.getElementById("과목선택");
+                    option_grade.length=0;
+                    for (var i = 0; i < 68; i++)
+                    {
+                        if(grade==Number(grade_subject_info[i][0]))
+                            option_grade.options[option_grade.options.length]=new Option(grade_subject_info[i][1],grade_subject_info[i][1]);
+                    }
+                    grade_select_check=true;
+              }
+            </script>
+            <script>
+                var button = document.getElementById("화살표1");
+                var select = document.getElementById("학년선택");
+                var buttom2_select=false;
+
+                button.addEventListener("click", function() {
+                    if(!buttom2_select)
+                    {
+                        select.style.display = "block";
+                        buttom2_select=true;
+                    }
+                    else
+                    {
+                        select.style.display = "none";
+                        buttom2_select=false;
+                    }
+                });
+            
+                select.addEventListener("change", function() {
+                    subject_print= document.getElementById("과목출력");
+                    subject_print.style.display = "none";
+                    subject=0;
+                    select.style.display = "none";
+                    assigned_teacher=[];
+                    if(subject==0)
+                    {
+                        for(var i=0; i<74; i++)
+                            if(info[i][2].split(",").includes(grade.toString()))
+                                assigned_teacher.push(info[i][0]);
+                    }
+                    else
+                    {
+                        for(var i=0; i<74; i++)
+                            if(info[i][1].split(",").includes(grade_subject_info[subject-1][1]) && info[i][2].split(",").includes(grade.toString()))
+                                assigned_teacher.push(info[i][0]);
+                    }
+                    teacher_list();
+                    button_1.style.opacity = 0.4;
+                    button_2.style.opacity = 0.4;
+                    document.getElementById("교무실위치").style.display = "none";
+                    document.getElementById("시간표").style.display = "none";
+                    document.getElementById("교무실위치설명").style.display = "none";
+                    grade_select_check=true;
+                });
+            </script>
+
+            <select id="과목선택" onchange="handleOnChange1(this)" size="67">
+            </select>
+            <script>
+                function handleOnChange1(e) {  
+                    const values1 = [...e.options]
+                    .filter(option => option.selected)
+                    .map(option => option.value);
+                    const texts = [...e.options]
+                    .filter(option => option.selected)
+                    .map(option => option.text);
+                    document.getElementById('과목출력').innerText = values1;
+                    for(i=0; i<=67; i++)
+                    {
+                        if(values1==grade_subject_info[i][1])
+                            subject=i+1;
+                    }
+              }
+            </script>
+            <script>
+                var button1 = document.getElementById("화살표2");
+                var select1 = document.getElementById("과목선택");
+                var buttom2_select=false;
+                button1.addEventListener("click", function() {
+                    if(!grade_select_check)
+                    {
+                        alert("학년을 먼저 선택해주세요.");
+                        return;
+                    }
+                    if(!buttom2_select)
+                    {
+                        select1.style.display = "block";
+                        buttom2_select=true;
+                    }
+                    else
+                    {
+                        select1.style.display = "none";
+                        buttom2_select=false;
+                    }
+                });
+            
+                select1.addEventListener("change", function() {
+                  select1.style.display = "none";
+                  subject_print.style.display = "block";
+                  assigned_teacher=[];
+                  if(grade==0)
+                    {
+                        for(var i=0; i<74; i++)
+                            if(info[i][1].split(",").includes(grade_subject_info[1][subject-1]))
+                                assigned_teacher.push(info[i][0]);
+                    }
+                    else
+                    {
+                        for(var i=0; i<74; i++)
+                            if(info[i][1].split(",").includes(grade_subject_info[subject-1][1]) && info[i][2].split(",").includes(grade.toString()))
+                                assigned_teacher.push(info[i][0]);
+                    }
+                    teacher_list();
+                    button_1.style.opacity = 0.4;
+                    button_2.style.opacity = 0.4;
+                    document.getElementById("교무실위치").style.display = "none";
+                    document.getElementById("시간표").style.display = "none";
+                    document.getElementById("교무실위치설명").style.display = "none";
+                });
+            </script>
+
+            <div id="선생님목록"></div>
+            <script>
+                teacher_list();
+                function teacher_list()
+                {
+                    print_arr=[];
+                    actual_teacher=[];
+                    for(let i=0; i<assigned_teacher.length; i++)
+                        for(let j=0; j<74; j++)
+                            if(assigned_teacher[i]==info[j][0])
+                            {
+                                actual_teacher.push(info[j][0]);
+                                print_arr.push(info[j][2]+"학년│"+info[j][1]+" 선생님");
+                            }
+                    
+                    const buttonContainer = document.getElementById('선생님목록');
+                    buttonContainer.innerHTML = '';
+
+                    clickedButtonIndex = -1;
+
+                    function handleClick(event) {
+                        const prevClickedButton = document.querySelector('.button.clicked');
+                        if (prevClickedButton)
+                            prevClickedButton.classList.remove('clicked');
+                        
+                        clickedButtonIndex = parseInt(event.target.dataset.index);
+                        event.target.classList.add('clicked');
+                        document.getElementById("교무실위치").style.display = "block";
+                        document.getElementById("시간표").style.display = "none";
+                        document.getElementById("교무실위치설명").style.display = "block";
+                        document.getElementById("교무실위치이미지").src = "./교무실위치/"+actual_teacher[clickedButtonIndex]+".png";
+                        button_1.style.opacity = 1;
+                        button_2.style.opacity = 0.4;
+                        //alert(actual_teacher[clickedButtonIndex]);
+                    }
+
+                    print_arr.forEach((text, index) => {
+                        const button = document.createElement('button');
+                        button.textContent = text;
+                        button.classList.add('button');
+                        button.dataset.index = index;
+                        button.addEventListener('click', handleClick);
+                        buttonContainer.appendChild(button);
+                    });
+                  
+                }
+            </script>
+            <div class="버튼1" id="벝은1">
+                <button id="텍스트1">선생님 위치</button>
+            </div> 
+            <div class="버튼2" id="벝은2">
+                <button id="텍스트2">선생님 시간표</button>
+            </div>
+            <div id="교무실위치">
+                <img id="교무실위치이미지">
+            </div> 
+            <div id="교무실위치설명">
+                <img src="교무실위치설명.jpg" id="교무실위치설명이미지">
+            </div> 
+            <div id="시간표">
+                <img id="시간표이미지">
+            </div> 
+            <script>
+                const button_t = document.getElementById("텍스트1");
+                const button_1 = document.getElementById("벝은1");
+                const button_2 = document.getElementById("벝은2");
+                button_t.addEventListener('click', (e) =>  {
+                    if(clickedButtonIndex!=-1)
+                    {
+                        button_1.style.opacity = 1;
+                        button_2.style.opacity = 0.4;
+                        document.getElementById("교무실위치").style.display = "block";
+                        document.getElementById("교무실위치설명").style.display = "block";
+                        document.getElementById("시간표").style.display = "none";
+                        document.getElementById("교무실위치이미지").src = "./교무실위치/"+actual_teacher[clickedButtonIndex]+".png";
+                    }
+                    else
+                    {
+                        alert("선생님을 먼저 선택해주세요.");
+                    }
+                });
+            </script>
+            <script>
+                const button_t_1 = document.getElementById("텍스트2");
+                button_t_1.addEventListener('click', (e) =>  {
+                    if(clickedButtonIndex!=-1)
+                    {
+                        button_1.style.opacity = 0.4;
+                        button_2.style.opacity = 1;
+                        document.getElementById("시간표").style.display = "block";
+                        document.getElementById("교무실위치").style.display = "none";
+                        document.getElementById("교무실위치설명").style.display = "none";
+                        document.getElementById("시간표이미지").src = "./시간표/"+actual_teacher[clickedButtonIndex]+".png";
+                    }
+                    else
+                    {
+                        alert("선생님을 먼저 선택해주세요.");
+                    }
+                });
+            </script>
+        </div>
+        <div class="개발자정보전체배경" id="정보전체배경"> 
+            <div id = "하얀무언가"></div>
+            <div class="개발자정보1">
+                <h1 id="개발자정보제목1">HTML5 & CSS 개발자</h1>
+                <h2 id="개발자정보본문1">장영하 : <br> 버그를 발견하셨다구요? <br> 축하드립니다! 이벤트에<br> 당첨되셨습니다! <br> 사는곳을 알려주세요 빨리요!</h2>
+                <div class="container" id = "HTML5로고">
+                    <img src="html로고.png" alt="아이콘1">
+                </div>
+                <div class="container" id = "CSS로고">
+                    <img src="css로고.png" alt="아이콘1">
+                </div>
+            </div>
+            <div class="개발자정보2">
+                <h1 id="개발자정보제목2">Java Script 개발자</h1>
+                <h2 id="개발자정보본문2">양도연 : <br> 사..살려줘...</h2>
+                <h2 id="개발자정보본문3">김강현 : <br> 이론상, 이론과 실제는 같다.<br>실제로는, 그렇지 않다.<br>- 요기 베라-</h2>
+                <div class="container" id = "자바로고">
+                    <img src="자바스크립트로고.png" alt="아이콘1">
+                </div>
+            </div>
+            <div class="개발자정보3">
+                <h1 id="개발자정보제목3">디자인 & 전체 기획</h1>
+                <h2 id="개발자정보본문4">이효비 : <br> 만약 돈을 벌려고 디자인에 뛰어든 사람이 있다면 그 사람은<br>건달일 것이다. - 조지 로이스 -</h2>
+                <h2 id="개발자정보본문5">오지훈 : <br> 야, 너도 할 수 있어</h2>
+                <div class="container" id = "디자인로고">
+                    <img src="제플린로고.jpg" alt="아이콘1">
+                </div>
+            </div>
+            <div id="line"></div>
+            <div id="line2"></div>
+            <div id="line3"></div>
+            <h2 id="전체배경제목"> 개발자 정보 </h2>
+        </div>
+        <div class="전체배경" id="도움말전체배경">
+            
+        </div>
+        <div class="왼쪽파랭이">
+            <div class="container" id = "상자">
+                <img src="택배상자.jpg" alt="아이콘1">
+            </div>
+            <div class="container" id = "집">
+                <img src="집.jpg" alt="아이콘2">
+            </div>
+            <button id="개발자정보">
+                개발자 정보
+            </button>
+            <button id="사용방법">
+                사용방법
+            </button>
+            <div class="container" id = "물음표">
+                <img src="물음표.png" alt="아이콘1">
+            </div>
+            <button id="수업위치"> 내가 수업 듣는 <br>
+                선생님 위치 찾기 </button>
+            <script>
+                const button_i = document.getElementById("개발자정보");
+                const button_p= document.getElementById("수업위치");
+                const button_u = document.getElementById("사용방법");
+                const ibg= document.getElementById("정보전체배경");
+                const pbg= document.getElementById("위치전체배경");
+                const ubg= document.getElementById("도움말전체배경");
+                button_i.addEventListener('click', (e1) =>  {
+                    button_i.style.opacity = 1;
+                    button_p.style.opacity = 0.4;
+                    button_u.style.opacity = 0.4;
+                    ibg.style.display='block';
+                    pbg.style.display='none';
+                    ubg.style.display='none';
+                });
+            </script>
+            <script>
+                button_p.addEventListener('click', (e1) =>  {
+                    button_p.style.opacity = 1;
+                    button_i.style.opacity = 0.4;
+                    button_u.style.opacity = 0.4;
+                    pbg.style.display='block';
+                    ibg.style.display='none';
+                    ubg.style.display='none';
+                });
+            </script>
+            <script>
+                button_u.addEventListener('click', (e1) =>  {
+                    button_u.style.opacity = 1;
+                    button_p.style.opacity = 0.4;
+                    button_i.style.opacity = 0.4;
+                    ibg.style.display='none';
+                    pbg.style.display='none';
+                    ubg.style.display='block';
+                });
+            </script>
+        </div>
+        <div class="배경">
+            <div class='container' id="로고">
+                <img src="진접고로고.jpg" alt="진접로고">
+            </div>
+            <h1 id="진접고등학교"> 진접고등학교 </h1>
+        </div>
+    </div>
+</body>
+</html>
